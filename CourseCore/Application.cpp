@@ -7,6 +7,12 @@ Application::Application()
 	windowParameters = GetWindowDefaultParameters();
 }
 
+Application::Application(std::string title)
+{
+	windowParameters = GetWindowDefaultParameters();
+	this->title = title;
+}
+
 Application::~Application()
 {
 	
@@ -49,7 +55,11 @@ void Application::Run(int *argc, char **argv)
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition(windowParameters.position.x, windowParameters.position.y);
 	glutInitWindowSize(windowParameters.windowWidth, windowParameters.windowHeight);
-	glutCreateWindow("DDA Line Algorithm");
+
+	if (title.empty())
+		glutCreateWindow("Unnamed Application");
+	else
+		glutCreateWindow(title.c_str());
 
 	graphicEngine->InitializeViewport(windowParameters);
 
@@ -65,11 +75,11 @@ void Application::MainLoop()
 		graphicEngine->Draw();
 }
 
-shared_ptr<Application> Application::GetInstance()
+shared_ptr<Application> Application::GetInstance(std::string title)
 {
 	if (instance == nullptr)
 	{
-		Application newApplication;
+		Application newApplication(title);
 		instance = make_shared<Application>(newApplication);
 	}
 

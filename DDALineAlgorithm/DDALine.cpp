@@ -35,7 +35,7 @@ void DDALine::Draw()
 	{
 		glBegin(GL_POINTS);
 		glColor3f(1.0, 1.0, 1.0);
-		glVertex2f(x, y);
+		glVertex2i(round(x), round(y));
 		glEnd();
 	
 		x += xIncrement;

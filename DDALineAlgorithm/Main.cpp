@@ -8,7 +8,7 @@ DDALine line = DDALine(Vector2(0, 0), Vector2(300, 200));
 
 int main(int argc, char **argv)
 {
-	application = Application::GetInstance();
+	application = Application::GetInstance("DDA Line Algorithm");
 	graphicEngine.AddComponent(make_shared<DDALine>(line));
 	application->SetGraphicEngine(make_shared<GraphicEngine2D>(graphicEngine));
 

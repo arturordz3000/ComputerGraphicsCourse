@@ -18,10 +18,13 @@ private:
 
 	WindowParameters GetWindowDefaultParameters();
 
+	std::string title;
+
 	static void MainLoop();
 
 public:
 	Application();
+	Application(std::string title);
 	~Application();
 
 	void SetWindowParameters(WindowParameters windowParameters);
@@ -32,6 +35,6 @@ public:
 
 	void Run(int *argc, char **argv);
 
-	static shared_ptr<Application> GetInstance();
+	static shared_ptr<Application> GetInstance(std::string title = "");
 };
 

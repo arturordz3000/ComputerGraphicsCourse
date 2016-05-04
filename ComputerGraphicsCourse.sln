@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DDALineAlgorithm", "DDALine
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CourseCore", "CourseCore\CourseCore.vcxproj", "{73640F6E-4902-4234-914C-49509B88309C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BresenhamLineAlgorithm", "BresenhamLineAlgorithm\BresenhamLineAlgorithm.vcxproj", "{C608AF48-C51B-4D41-9F8C-D9812F11824C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{73640F6E-4902-4234-914C-49509B88309C}.Debug|Win32.Build.0 = Debug|Win32
 		{73640F6E-4902-4234-914C-49509B88309C}.Release|Win32.ActiveCfg = Release|Win32
 		{73640F6E-4902-4234-914C-49509B88309C}.Release|Win32.Build.0 = Release|Win32
+		{C608AF48-C51B-4D41-9F8C-D9812F11824C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C608AF48-C51B-4D41-9F8C-D9812F11824C}.Debug|Win32.Build.0 = Debug|Win32
+		{C608AF48-C51B-4D41-9F8C-D9812F11824C}.Release|Win32.ActiveCfg = Release|Win32
+		{C608AF48-C51B-4D41-9F8C-D9812F11824C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
