@@ -22,5 +22,6 @@ public:
 private:
 	void DrawPoint(int x, int y);
 	void DrawLineWithSlopeLesserThan1(Vector2 start, Vector2 end, int dx, int dy, int yIncrement = 1);
+	void DrawLineWithSlopeGreaterThan1(Vector2 start, Vector2 end, int dx, int dy, int xIncrement = 1);
 };
 
