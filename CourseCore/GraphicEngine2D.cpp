@@ -3,7 +3,7 @@
 
 GraphicEngine2D::GraphicEngine2D()
 {
-
+	renderer = make_shared<Renderer>(Renderer2D());
 }
 
 

@@ -1,7 +1,6 @@
 #pragma once
 #include "GraphicEngine.h"
-#include <Windows.h>
-#include <gl\glut.h>
+#include "Renderer2D.h"
 
 #ifdef COURSECORE_EXPORTS
 #define COURSECORE_API __declspec(dllexport)

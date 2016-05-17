@@ -10,6 +10,7 @@
 #include <gl\glut.h>
 #include <vector>
 #include <memory>
+#include "Renderer.h"
 #include "GraphicComponent.h"
 #include "CoreStructures.h"
 
@@ -19,6 +20,9 @@ class COURSECORE_API GraphicEngine
 {
 private:
 	vector<shared_ptr<GraphicComponent>> graphicComponents;
+
+protected:
+	shared_ptr<Renderer> renderer;
 
 public:
 	GraphicEngine();

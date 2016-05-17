@@ -7,6 +7,8 @@
 #endif
 
 #include <gl\glut.h>
+#include <memory>
+#include "Renderer.h"
 
 class COURSECORE_API GraphicComponent
 {
@@ -14,6 +16,6 @@ public:
 	GraphicComponent();
 	~GraphicComponent();
 
-	virtual void Draw();
+	virtual void Draw(std::shared_ptr<Renderer> renderer);
 };
 

@@ -28,7 +28,7 @@ void GraphicEngine::Draw()
 	std::vector<shared_ptr<GraphicComponent>>::iterator componentsIterator = graphicComponents.begin();
 
 	for (unsigned int i = 0; i < graphicComponents.size(); i++)
-		componentsIterator[i]->Draw();
+		componentsIterator[i]->Draw(renderer);
 
 	glutSwapBuffers();
 }

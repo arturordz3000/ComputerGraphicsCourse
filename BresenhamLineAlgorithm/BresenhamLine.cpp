@@ -20,22 +20,15 @@ BresenhamLine::~BresenhamLine()
 {
 }
 
-void BresenhamLine::DrawPoint(int x, int y)
+void BresenhamLine::DrawLineWithSlopeLesserThan1(std::shared_ptr<Renderer> renderer, Vector2 start, Vector2 end, int dx, int dy, int yIncrement)
 {
-	glBegin(GL_POINTS);
-	glColor3f(color.x, color.y, color.z);
-	glVertex2i(x, y);
-	glEnd();
-}
-
-void BresenhamLine::DrawLineWithSlopeLesserThan1(Vector2 start, Vector2 end, int dx, int dy, int yIncrement)
-{
+	std::shared_ptr<Renderer2D> renderer2D = std::static_pointer_cast<Renderer2D>(renderer);
 	int error = 0;
 	int y = start.y;
 
 	for (int x = start.x; x <= end.x; x++)
 	{
-		DrawPoint(x, y);
+		renderer2D->DrawPoint(x, y, color);
 		error += dy;
 
 		// error << 1 is equals to 2 * error
@@ -47,14 +40,15 @@ void BresenhamLine::DrawLineWithSlopeLesserThan1(Vector2 start, Vector2 end, int
 	}
 }
 
-void BresenhamLine::DrawLineWithSlopeGreaterThan1(Vector2 start, Vector2 end, int dx, int dy, int xIncrement)
+void BresenhamLine::DrawLineWithSlopeGreaterThan1(std::shared_ptr<Renderer> renderer, Vector2 start, Vector2 end, int dx, int dy, int xIncrement)
 {
+	std::shared_ptr<Renderer2D> renderer2D = std::static_pointer_cast<Renderer2D>(renderer);
 	int error = 0;
 	int x = start.x;
 
 	for (int y = start.y; y <= end.y; y++)
 	{
-		DrawPoint(x, y);
+		renderer2D->DrawPoint(x, y, color);
 		error += dx;
 
 		// error << 1 is equals to 2 * error
@@ -66,7 +60,7 @@ void BresenhamLine::DrawLineWithSlopeGreaterThan1(Vector2 start, Vector2 end, in
 	}
 }
 
-void BresenhamLine::Draw()
+void BresenhamLine::Draw(std::shared_ptr<Renderer> renderer)
 {
 	int dx = end.x - start.x;
 	int dy = end.y - start.y;
@@ -84,9 +78,9 @@ void BresenhamLine::Draw()
 		}
 
 		if (dy > 0)
-			DrawLineWithSlopeLesserThan1(start, end, dx, dy, 1);
+			DrawLineWithSlopeLesserThan1(renderer, start, end, dx, dy, 1);
 		else
-			DrawLineWithSlopeLesserThan1(start, end, dx, -dy, -1);
+			DrawLineWithSlopeLesserThan1(renderer, start, end, dx, -dy, -1);
 	}
 	else
 	{
@@ -101,9 +95,9 @@ void BresenhamLine::Draw()
 		}
 
 		if (dx > 0)
-			DrawLineWithSlopeGreaterThan1(start, end, dx, dy, 1);
+			DrawLineWithSlopeGreaterThan1(renderer, start, end, dx, dy, 1);
 		else
-			DrawLineWithSlopeGreaterThan1(start, end, -dx, dy, -1);
+			DrawLineWithSlopeGreaterThan1(renderer, start, end, -dx, dy, -1);
 
 	}
 }

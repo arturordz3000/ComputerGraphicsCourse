@@ -11,8 +11,10 @@ DDALine::~DDALine()
 {
 }
 
-void DDALine::Draw()
+void DDALine::Draw(std::shared_ptr<Renderer> renderer)
 {
+	std::shared_ptr<Renderer2D> renderer2D = std::static_pointer_cast<Renderer2D>(renderer);
+
 	int x0 = start.x, y0 = start.y;
 	int x1 = end.x, y1 = end.y;
 
@@ -33,10 +35,7 @@ void DDALine::Draw()
 	
 	for (int i = 0; i < steps; i++)
 	{
-		glBegin(GL_POINTS);
-		glColor3f(1.0, 1.0, 1.0);
-		glVertex2i(round(x), round(y));
-		glEnd();
+		renderer2D->DrawPoint(round(x), round(y));
 	
 		x += xIncrement;
 		y += yIncrement;

@@ -11,28 +11,22 @@ MidpointCircle::~MidpointCircle()
 {
 }
 
-void DrawPoint(int x, int y)
+void MidpointCircle::PlotCirclePoints(std::shared_ptr<Renderer> renderer, int x, int y)
 {
-	glBegin(GL_POINTS);
-	glColor3f(1, 1, 1);
-	glVertex2i(x, y);
-	glEnd();
+	std::shared_ptr<Renderer2D> renderer2D = std::static_pointer_cast<Renderer2D>(renderer);
+
+	renderer2D->DrawPoint(x + center.x, y + center.y);
+	renderer2D->DrawPoint(x + center.x, -y + center.y);
+	renderer2D->DrawPoint(y + center.x, x + center.y);
+	renderer2D->DrawPoint(y + center.x, -x + center.y);
+
+	renderer2D->DrawPoint(-x + center.x, y + center.y);
+	renderer2D->DrawPoint(-x + center.x, -y + center.y);
+	renderer2D->DrawPoint(-y + center.x, x + center.y);
+	renderer2D->DrawPoint(-y + center.x, -x + center.y);
 }
 
-void PlotCirclePoints(int x, int y, Vector2 center)
-{
-	DrawPoint(x + center.x, y + center.y);
-	DrawPoint(x + center.x, -y + center.y);
-	DrawPoint(y + center.x, x + center.y);
-	DrawPoint(y + center.x, -x + center.y);
-
-	DrawPoint(-x + center.x, y + center.y);
-	DrawPoint(-x + center.x, -y + center.y);
-	DrawPoint(-y + center.x, x + center.y);
-	DrawPoint(-y + center.x, -x + center.y);
-}
-
-void MidpointCircle::Draw() 
+void MidpointCircle::Draw(std::shared_ptr<Renderer> renderer)
 {
 	int p = 1 - radius;
 	int x = 0;
@@ -40,7 +34,7 @@ void MidpointCircle::Draw()
 
 	while (x <= y)
 	{
-		PlotCirclePoints(x, y, center);
+		PlotCirclePoints(renderer, x, y);
 
 		if (p >= 0)
 		{

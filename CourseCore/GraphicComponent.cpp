@@ -10,7 +10,7 @@ GraphicComponent::~GraphicComponent()
 {
 }
 
-void GraphicComponent::Draw()
+void GraphicComponent::Draw(std::shared_ptr<Renderer> renderer)
 {
 
 }
