@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BresenhamLineAlgorithm", "B
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MidpointCircleAlgorithm", "MidpointCircleAlgorithm\MidpointCircleAlgorithm.vcxproj", "{E6B52B6A-99D8-430A-9139-2159A41DFCBB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MidpointEllipseAlgorithm", "MidpointEllipseAlgorithm\MidpointEllipseAlgorithm.vcxproj", "{9BFEE8B0-3B77-4104-941A-57D184DD59F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,6 +35,10 @@ Global
 		{E6B52B6A-99D8-430A-9139-2159A41DFCBB}.Debug|Win32.Build.0 = Debug|Win32
 		{E6B52B6A-99D8-430A-9139-2159A41DFCBB}.Release|Win32.ActiveCfg = Release|Win32
 		{E6B52B6A-99D8-430A-9139-2159A41DFCBB}.Release|Win32.Build.0 = Release|Win32
+		{9BFEE8B0-3B77-4104-941A-57D184DD59F1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9BFEE8B0-3B77-4104-941A-57D184DD59F1}.Debug|Win32.Build.0 = Debug|Win32
+		{9BFEE8B0-3B77-4104-941A-57D184DD59F1}.Release|Win32.ActiveCfg = Release|Win32
+		{9BFEE8B0-3B77-4104-941A-57D184DD59F1}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
