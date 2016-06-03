@@ -1,3 +1,4 @@
 module.exports = {
-	isDebug: false
+	isDebug: false,
+	mainSolution: "ComputerGraphicsCourse.sln"
 }

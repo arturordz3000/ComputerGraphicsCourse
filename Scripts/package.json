@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/arturordz3000/ComputerGraphicsCourse",
   "dependencies": {
+    "guid": "0.0.12",
     "promise": "^7.1.1",
     "regedit": "^2.2.6",
     "stringformat": "0.0.5",

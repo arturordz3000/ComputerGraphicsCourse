@@ -24,7 +24,7 @@ if (!fileSystem.existsSync(projectPath)) {
 		console.log("Project directory created!");
 	}
 
-	projectGenerator.generate(projectPath, projectInfo);
+	projectGenerator.generate(projectPath, projectInfo).addToSolution();
 
 } else {
 	console.log("Warning: Project directory already exists.");

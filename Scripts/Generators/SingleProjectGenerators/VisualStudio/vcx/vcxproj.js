@@ -11,7 +11,9 @@ function replaceTemplateValuesWithConfigurationValues(templateXml, configuration
 		filesToCompileXml += "<ClCompile Include=\"" + configuration.IncludeCppFiles[i].fileName + "\" />";
 	}
 
-	return stringFormat(templateXml.toString(), projectInfo.name, filesToCompileXml);
+	var projectGuid = require('guid').raw();
+
+	return { xmlContent: stringFormat(templateXml.toString(), projectInfo.name, filesToCompileXml, projectGuid), projectGuid: projectGuid };
 
 }
 
@@ -57,8 +59,10 @@ module.exports = function(projectPath, projectInfo) {
 	configuration.ProjectName = projectInfo.name;
 
 	var templateXml = fileSystem.readFileSync(__dirname + "/" + configuration.Template);
-	var projectFileXml = replaceTemplateValuesWithConfigurationValues(templateXml, configuration, projectInfo);
+	var projectFileInfo = replaceTemplateValuesWithConfigurationValues(templateXml, configuration, projectInfo);
 
-	createProjectFileOnSpecifiedPath(projectInfo, projectFileXml, projectPath);
+	createProjectFileOnSpecifiedPath(projectInfo, projectFileInfo.xmlContent, projectPath);
 	copyIncludedFiles(configuration.IncludeCppFiles, projectPath);
+
+	return projectFileInfo.projectGuid;
 }
