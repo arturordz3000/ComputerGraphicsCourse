@@ -1,0 +1,4 @@
+{
+	"Template": "opengl-cpp/template.xml",
+	"IncludeCppFiles": [{"fileDirectory": "opengl-cpp/", "fileName": "Main.cpp"}]
+}
