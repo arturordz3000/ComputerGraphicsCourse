@@ -13,8 +13,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MidpointCircleAlgorithm", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MidpointEllipseAlgorithm", "MidpointEllipseAlgorithm\MidpointEllipseAlgorithm.vcxproj", "{9BFEE8B0-3B77-4104-941A-57D184DD59F1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParabolicShot", "ParabolicShot\ParabolicShot.vcxproj", "{F81F5824-5F68-46EE-A2CE-06BF68864D92}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -41,10 +39,6 @@ Global
 		{9BFEE8B0-3B77-4104-941A-57D184DD59F1}.Debug|Win32.Build.0 = Debug|Win32
 		{9BFEE8B0-3B77-4104-941A-57D184DD59F1}.Release|Win32.ActiveCfg = Release|Win32
 		{9BFEE8B0-3B77-4104-941A-57D184DD59F1}.Release|Win32.Build.0 = Release|Win32
-		{F81F5824-5F68-46EE-A2CE-06BF68864D92}.Debug|Win32.ActiveCfg = Debug|Win32
-		{F81F5824-5F68-46EE-A2CE-06BF68864D92}.Debug|Win32.Build.0 = Debug|Win32
-		{F81F5824-5F68-46EE-A2CE-06BF68864D92}.Release|Win32.ActiveCfg = Release|Win32
-		{F81F5824-5F68-46EE-A2CE-06BF68864D92}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
